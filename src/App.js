@@ -1,10 +1,10 @@
-import logo from './logo.svg';
+import Navigation from "./components/navigation";
 
 
 function App() {
   return (
     <div className="App">
-
+      <Navigation></Navigation>
     </div>
   );
 }
