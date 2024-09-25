@@ -1,38 +1,24 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const navLinks = [
-    {
-        title: 'Home',
-        path: './'
-    },
+  { title: 'Home', path: './pages/home' },
+  { title: 'Blog', path: './pages/blog' },
+  { title: 'Contact Us', path: './pages/contact-us' },
+  { title: 'Login', path: './pages/login' }
+];
 
-    {
-        title: 'Blog',
-        path: '/blog'
-    },
-
-    {
-        title: 'Contact Us',
-        path: '/contact-us'
-    },
-    {
-        title: 'Login',
-        path: '/login'
-    }
-]
-
-export default function Navigation (){
-    return (
-        <nav className='site-navigation'>
-            <span>My React Blog</span>
-
-            <ul>
-                { navLinks.map((link,index) => (
-                        <li key={index}>
-                            {link.title}
-                       </li>
-                ))}
-            </ul>
-        </nav>
-    )
+export default function Navigation() {
+  return (
+    <nav className="site-navigation">
+      <span className='menu-title'>My React Blog</span>
+      <ul className="nav-list">
+        {navLinks.map((link, index) => (
+          <li key={index}>
+            <Link to={link.path}>{link.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
 }
